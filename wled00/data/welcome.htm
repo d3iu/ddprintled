@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content='width=device-width' name='viewport'>
+		<meta name="theme-color" content="#222222">
+		<title>Bun venit!</title>
+		<style>
+			body {
+				font-family: Verdana, Helvetica, sans-serif;
+				text-align: center;
+				background-color: #222;
+				margin: 0;
+				color: #fff;
+			}
+	
+			button {
+				outline: none;
+				cursor: pointer;
+				padding: 8px;
+				margin: 10px;
+				width: 230px;
+				text-transform: uppercase;
+				font-family: helvetica;
+				font-size: 19px;
+				background-color: #333;
+				color: white;
+				border: 0px solid white;
+				border-radius: 25px;
+			}
+
+			img {
+				width: 950px;
+				max-width: 82%;
+				image-rendering: pixelated;
+				image-rendering: crisp-edges;
+				margin: 4vh 0 0 0;
+				animation: fi 1s;
+			}
+			
+			@keyframes fi {
+				from { opacity: 0; }
+				to   { opacity: 1; }
+			}
+	
+			.main {
+				animation: fi 1.5s .7s both;
+			}
+		</style>
+	</head>
+	<body>
+		<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAfCAYAAADtEkOcAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGMWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYTFjZDEyZiwgMjAyNC8xMS8xMS0xOTowODo0NiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjMgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNS0wMi0xNVQxMjo1ODoyNSswMjowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjUtMDItMTVUMTI6NTg6NTkrMDI6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjUtMDItMTVUMTI6NTg6NTkrMDI6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmQyMDZjYjA4LThjYmQtZTY0YS1iY2E4LTZhNjRjMzdiNTAxZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjhhZTVlYTg5LWU2NWUtNzY0Ni1iNDYzLTNlZGI5YjEzZjQ1NiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmZjYmNkZWY5LTgwNTEtZTc0YS04ODRjLTZlZTMzOWRhZTMzZiI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZmNiY2RlZjktODA1MS1lNzRhLTg4NGMtNmVlMzM5ZGFlMzNmIiBzdEV2dDp3aGVuPSIyMDI1LTAyLTE1VDEyOjU4OjI1KzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjYuMyAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZDIwNmNiMDgtOGNiZC1lNjRhLWJjYTgtNmE2NGMzN2I1MDFkIiBzdEV2dDp3aGVuPSIyMDI1LTAyLTE1VDEyOjU4OjU5KzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjYuMyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+LSg7sAAAB+9JREFUaIHtm3+MXFUVxz/nvvdmdnZo3a6UJTVW0DYNCqGVABIbf2FFVKImgmgiRmOK/kH9Q0w0gaqtxhIjEqOGhhohKuEPICVoSBQFI2BaQa1N2ui2KIVaka6W2bIz++O94x/3vpk7b97szm7fzmYTvsnkvXvPvefe97733HvueXdEVXkVywthUYouHv3IPqCa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">
+		<div class="main">
+			<h1>Bun venit la DDprint LED!</h1>
+			<h3>Multumesc ca folosesti aplicatia!</h3>
+			<b>Pasii urmatori:</b><br><br>
+			Conecteaza-te la wifi-ul tau!<br>
+			<button onclick="window.location.href='./settings/wifi'">Setari Wifi</button><br>
+			<i>Vrei sa folosesti neconectat la internet?</i><br>
+			<button onclick="window.location.href='./?sliders'">Controleaza led-urile!</button><br>
+		</div>
+	</body>
+</html>

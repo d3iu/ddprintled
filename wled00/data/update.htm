@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='width=device-width' name='viewport'>
+	<title>DDprint Update</title>
+	<script>
+		function B() { window.history.back(); }
+		function U() { document.getElementById("uf").style.display="none";document.getElementById("msg").style.display="block"; }
+		function GetV() {/*injected values here*/}
+	</script>
+	<style>
+		@import url("style.css");
+	</style>
+</head>
+
+<body onload="GetV()">
+	<h2>WLED Software Update</h2>
+	<form method='POST' action='./update' id='uf' enctype='multipart/form-data' onsubmit="U()">
+		Versiune instalata: <span class="sip">##VERSION##</span><br>
+		<input type='file' name='update' required><br> <!--should have accept='.bin', but it prevents file upload from android app-->
+		<button type="submit">Actualizare!</button><br>
+		<button type="button" onclick="B()">Back</button>
+	</form>
+	<div id="msg"><b>Actualizare...</b><br>Te rog asteapta! :)</div>
+</body>
+</html>

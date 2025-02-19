@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta charset="utf-8">
+	<title>Misc Settings</title>
+	<script src="common.js" async type="text/javascript"></script>
+	<script>
+		function U() { window.open(getURL("/update"),"_self"); }
+		function checkNum(o) {
+			const specialkeys = ["Backspace", "Tab", "Enter", "Shift", "Control", "Alt", "Pause", "CapsLock", "Escape", "Space", "PageUp", "PageDown", "End", "Home", "ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", "Insert", "Delete"];
+			// true if key is a number or a special key
+			if(event.key.match(/[0-9]/) || specialkeys.includes(event.key)) return true;
+			event.preventDefault();
+			return false;
+		}
+		function setBckFilename(x) {
+			x.setAttribute("download","wled_" + x.getAttribute("download") + (sd=="WLED"?"":("_" +sd)));
+		}
+		function S() {
+			getLoc();
+			if (loc) {
+				gId("bckcfg").setAttribute('href',getURL(gId("bckcfg").pathname));
+				gId("bckpresets").setAttribute('href',getURL(gId("bckpresets").pathname));
+			}
+			loadJS(getURL('/settings/s.js?p=6'), false, undefined, ()=>{
+				setBckFilename(gId("bckcfg"));
+				setBckFilename(gId("bckpresets"));
+			});	// If we set async false, file is loaded and executed, then next statement is processed
+			if (loc) d.Sf.action = getURL('/settings/sec');
+		}
+	</script>
+	<style>
+		@import url("style.css");
+	</style>
+</head>
+<body onload="S()">
+	<form id="form_s" name="Sf" method="post">
+		<div class="toprow">
+		<div class="helpB"><button type="button" onclick="H('features/settings/#security-settings')">?</button></div>
+		<button type="button" onclick="B()">Back</button><button type="submit">Save</button><hr>
+		</div>
+		<h2>Setari securitate si actualizare</h2>
+		Pin setari: <input type="password" id="PIN" name="PIN" size="4" maxlength="4" minlength="4" onkeydown="checkNum(this)" pattern="[0-9]*" inputmode="numeric" title="Please enter a 4 digit number"><br>
+		<div class="warn">&#9888; Acest pin nu este criptat, nu folosi pin de la banca sau altceva</div><br>
+		Blocheaza (OTA) actualizari soft: <input type="checkbox" name="NO"><br>
+		Parola: <input type="password" name="OP" maxlength="32"><br>
+		Ca sa activezi OTA, trebuie sa introduci parola!<br>
+		Parola trebuie schimbata daca folosesti OTA.<br>
+
+		Blocheaza accesul la setarile WiFi daca este blocat: <input type="checkbox" name="OW"><br><br>
+		Factory reset: <input type="checkbox" name="RS"><br>
+		All settings and presets will be erased.<br><br>
+		<hr>
+		<h3>Actualizare soft</h3>
+		<button type="button" onclick="U()">Actualizare manuala</button><br>
+		Activeaza DDprintOTA: <input type="checkbox" name="AO">
+		<hr id="backup">
+		<h3>Backup & Restaurare</h3>
+		<div class="warn">&#9888; Restaurarea preseturilor va suprascrie setarile actuale, in caz de eroare, se va efectua o resetare din fabrica</div>
+		<a class="btn lnk" id="bckcfg" href="/presets.json" download="presets">Backup preseturi</a><br>
+		<div>Restaurare preseturi<br><input type="file" name="data" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data,'/presets.json');">Incarca</button><br></div><br>
+		<a class="btn lnk" id="bckpresets" href="/cfg.json" download="cfg">Backup configuratie</a><br>
+		<div>Restaurare configuratie<br><input type="file" name="data2" accept=".json"> <button type="button" onclick="uploadFile(d.Sf.data2,'/cfg.json');">Incarca</button><br></div>
+		<hr>
+		<h3>Despre</h3>
+		<a href="https://resita.eu" target="_blank">DDprint</a>&#32;versiune ##VERSION##<!-- Autoreplaced from package.json --><br><br>
+		(c) 2025 Deiu <br>
+		<br>
+		<div id="toast"></div>
+		<button type="button" onclick="B()">Inapoi</button><button type="submit">Salveaza</button>
+	</form>
+</body>
+</html>
