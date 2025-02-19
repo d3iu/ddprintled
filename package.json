@@ -1,6 +1,6 @@
 {
   "name": "DDprint",
-  "version": "0.1-deiu",
+  "version": "0.2-deiu",
   "description": "Instrumente pentru DDprint Led",
   "main": "tools/cdata.js",
   "directories": {
